@@ -1,0 +1,9 @@
+[package]
+name = "inifile"
+version = "0.1.0"
+authors = ["Eliovir <eliovir@gmail.com>"]
+
+[[lib]]
+name = "inifile"
+path = "src/lib.rs"
+crate_type = ["dylib", "rlib"]
