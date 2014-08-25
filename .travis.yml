@@ -1,20 +1,9 @@
-# Use something that's not 'ruby' so we don't set up things like
-# RVM/bundler/ruby and whatnot. Right now 'rust' isn't a language on
-# travis and it treats unknown languages as ruby
-language: c
+language: rust
 
 env:
   global:
     - secure: gqyt9BKChLzQTGx9QUr7rgdHVLosnkOjz0BZjnpyYIMamq+aQo/sXE13vf4cdkVJZ1KzYONCWWwsLaqPqD688bkXU39E3LWgACF7WWWjQaxAW/cZ5a+si+nZvbk+TpUuaULqMoj/IfnWq2w5FGLkbVP83bigsDY2XKV8qeYzCks=
-before_install:
-  - sudo add-apt-repository --yes ppa:hansjorg/rust
-  - sudo add-apt-repository --yes ppa:cmrx64/cargo
-  - sudo apt-get update -qq
-install:
-  - sudo apt-get install -qq rust-nightly cargo
-  - rustc --version
-script:
-  - make test
 after_script:
+  - rustc --version
   - make docs
   - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh
