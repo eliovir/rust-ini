@@ -1,9 +1,9 @@
 language: rust
-rust: 0.12.0
+rust: 1.3.0
 env:
   global:
     - secure: gqyt9BKChLzQTGx9QUr7rgdHVLosnkOjz0BZjnpyYIMamq+aQo/sXE13vf4cdkVJZ1KzYONCWWwsLaqPqD688bkXU39E3LWgACF7WWWjQaxAW/cZ5a+si+nZvbk+TpUuaULqMoj/IfnWq2w5FGLkbVP83bigsDY2XKV8qeYzCks=
 after_script:
   - rustc --version
-  - make docs
+  - make doc
   - curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh

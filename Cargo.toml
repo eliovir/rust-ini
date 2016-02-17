@@ -3,7 +3,15 @@ name = "inifile"
 version = "0.1.0"
 authors = ["Eliovir <eliovir@gmail.com>"]
 
+[dependencies]
+log = "0.3.4"
+
 [lib]
 name = "inifile"
 path = "src/lib.rs"
 crate_type = ["dylib", "rlib"]
+
+[[bench]]
+name = "benchmarks"
+path = "src/bench.rs"
+bench = true
